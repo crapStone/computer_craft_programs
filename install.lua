@@ -3,9 +3,11 @@
 
 local scripts = http.get("https://raw.githubusercontent.com/crapStone/computer_craft_programs/master/script_list").readAll()
 
+print()
 print("=======================")
 print(" installing scripts...")
 print("=======================")
+print()
 
 for script in string.gmatch(scripts, "%a+") do
     local url = string.format("https://raw.githubusercontent.com/crapStone/computer_craft_programs/master/%s.lua", script)
@@ -19,3 +21,5 @@ for script in string.gmatch(scripts, "%a+") do
 
     print(string.format("installed %s", script))
 end
+
+print()
