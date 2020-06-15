@@ -494,7 +494,7 @@ function craplib.quarry(size, direction, fEnd)
     craplib.goTo(x, y, z, xd, zd)
 end
 
-if package.loaded["craplib"] then
+if package.loaded["libs.craplib"] then
     return craplib
 else
     print("Nothing happens...")
