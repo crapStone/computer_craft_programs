@@ -16,7 +16,6 @@ for _, script in pairs(json.decode(scripts)) do
     local url = string.format(
                     "https://raw.githubusercontent.com/crapStone/computer_craft_programs/master/%s.lua",
                     script)
-    print(url)
     local content = http.get(url)
 
     local fh = fs.open(string.format("%s.lua", script), "w")
