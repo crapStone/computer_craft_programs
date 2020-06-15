@@ -1,8 +1,12 @@
-[
-    "craplib",
-    "forest",
-    "quarry",
-    "stripMine",
-    "tree",
-    "update"
-]
+{
+    "scripts": [
+        "forest",
+        "quarry",
+        "stripMine",
+        "tree",
+        "update"
+    ],
+    "libs": [
+        "craplib"
+    ]
+}

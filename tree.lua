@@ -1,4 +1,4 @@
-local craplib = require("craplib")
+local craplib = require("libs.craplib")
 
 local treelib = {}
 
