@@ -1,7 +1,18 @@
 -- https://pastebin.com/HKckLDnp
 -- pastebin run HKckLDnp
 
-local scripts = http.get("https://raw.githubusercontent.com/crapStone/computer_craft_programs/master/script_list").readAll()
+print()
+print("installing dependencies...")
+
+local lua_json = http.get("https://raw.githubusercontent.com/rxi/json.lua/master/json.lua").readAll()
+
+local fh = fs.open("libs/json.lua", "w")
+fh.write(lua_json)
+fh.close()
+
+local json = require("libs.json")
+
+local scripts = http.get("https://raw.githubusercontent.com/crapStone/computer_craft_programs/master/script_list.json").readAll()
 
 print()
 print("=======================")
@@ -9,7 +20,7 @@ print(" installing scripts...")
 print("=======================")
 print()
 
-for script in string.gmatch(scripts, "%a+") do
+for _, script in pairs(json.decoce(scripts)) do
     local url = string.format("https://raw.githubusercontent.com/crapStone/computer_craft_programs/master/%s.lua", script)
     local content = http.get(url)
 
